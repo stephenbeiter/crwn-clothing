@@ -6,6 +6,7 @@ import Header from './components/header/header.components';
 import HomePage from './pages/home/home.component';
 import ShopPage from './pages/shop/shop.component';
 import AuthPage from './pages/auth/auth.component';
+import { auth } from './firebase/firebase.utils';
 
 function App() {
   return (
