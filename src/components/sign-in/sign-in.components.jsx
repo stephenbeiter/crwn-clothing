@@ -46,6 +46,7 @@ class SignIn extends React.Component {
             type='email'
             value={this.state.email}
             handleChange={this.handleChange}
+            autoComplete="username"
             required
           />
 
@@ -55,6 +56,7 @@ class SignIn extends React.Component {
             type='password'
             value={this.state.password}
             handleChange={this.handleChange}
+            autoComplete="current-password"
             required
           />
 
