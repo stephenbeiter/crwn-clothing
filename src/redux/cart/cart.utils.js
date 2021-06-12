@@ -14,10 +14,3 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }]
 };
-
-export const cartTotal = (cartItems) => {
-  const total = 0;
-  cartItems.forEach(item => {
-    total = total + item.quantity;
-  })
-}
