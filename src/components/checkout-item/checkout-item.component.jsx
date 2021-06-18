@@ -1,17 +1,18 @@
 import React from 'react';
 
-const CheckoutItem = ({ item }) => {
-  const { name, quanity, price, imageUrl } = item;
+import './checkout-item.styles.scss';
 
-  return (
-    <div className='checkout-list'>
-      <img src={imageUrl} alt='product' />
-      <div className='checkout-name'>{name}</div>
-      <div className='checkout-quantity'>{quanity}</div>
-      <div className='checkout-price'>{price}</div>
-      <div className='checkout-remove'>X</div>
+const CheckoutItem = ({ cartItem: { name, quanity, price, imageUrl } }) => (
+
+  <div className='checkout-item'>
+    <div className='image-container'>
+      <img alt='item' src={imageUrl} />
     </div>
-  )
-};
+    <span className='name'>{name}</span>
+    <span className='quantity'>{quanity}</span>
+    <span className='price'>{price}</span>
+    <div className='remove-button'>&#10005;</div>
+  </div>
+);
 
 export default CheckoutItem;
