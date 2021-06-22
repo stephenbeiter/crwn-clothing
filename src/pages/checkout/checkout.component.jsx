@@ -29,7 +29,6 @@ const CheckoutPage = ({ cartItems, total }) => (
     </div>
     {
       cartItems.map(item => {
-        console.log(item);
         return (
           <CheckoutItem key={item.id} cartItem={item} />
         )
