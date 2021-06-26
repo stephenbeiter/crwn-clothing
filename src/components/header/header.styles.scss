@@ -4,13 +4,19 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  border-bottom: 1px solid black;
 
   .logo-container {
     height: 100%;
-    width: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .logo-title {
+      font-size: 32px;
+      font-weight: 600;
+      margin-left: 15px;
+    }
   }
 
   .options {
