@@ -9,7 +9,6 @@ import Spinner from '../../components/spinner/spinner.component';
 import { updateCollections } from '../../redux/shop/shop.actions';
 
 import { firestore, convertCollectionsSnapshotToMap } from '../../firebase/firebase.utils';
-import { TRUE } from 'node-sass';
 
 const CollectionOverviewWithSpinner = Spinner(CollectionsOverview);
 const CollectionPageWithSpinner = Spinner(CollectionPage);
