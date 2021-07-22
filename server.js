@@ -1,6 +1,6 @@
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
@@ -26,6 +26,7 @@ app.listen(port, error => {
 });
 
 app.post('/payment', (req, res) => {
+  console.log(req.body);
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,
@@ -34,9 +35,9 @@ app.post('/payment', (req, res) => {
 
   stripe.charges.create(body, (stripeErr, stripeRes) => {
     if (stripeErr) {
-      res.status(500).send({ error: stripeErr })
+      res.status(500).send({ error: stripeErr });
     } else {
-      res.status(200).send({ success: stripeRes })
+      res.status(200).send({ success: stripeRes });
     }
-  })
+  });
 });

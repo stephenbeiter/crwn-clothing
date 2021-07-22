@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
-  const publishableKey = 'pk_test_51ISUv2LaWzEWwDGjaxGFwQBRoiGK2LcpyVQ2mNgbXCvQnI0qePqp1LKI0uXBelTgr36p0VLbjvHJsUyhhlSCVTou00xKZrPdvi'
+  const publishableKey = 'pk_test_b7a3hFL5nC3qlBCZ6bQACpez00gyMMP52H';
 
   const onToken = token => {
     axios({
@@ -12,20 +12,24 @@ const StripeCheckoutButton = ({ price }) => {
       method: 'post',
       data: {
         amount: priceForStripe,
-        token
+        token: token
       }
-    }).then(response => {
-      alert('Payment Successful');
-    }).catch(error => {
-      console.log('Payment error: ', JSON.parse(error));
-      alert('There was an issue with your payment. Please be sure to use the provided credit card.')
-    });
+    })
+      .then(response => {
+        alert('succesful payment');
+      })
+      .catch(error => {
+        console.log('Payment Error: ', error);
+        alert(
+          'There was an issue with your payment! Please make sure you use the provided credit card.'
+        );
+      });
   };
 
   return (
     <StripeCheckout
       label='Pay Now'
-      name='CRWN Clothing'
+      name='CRWN Clothing Ltd.'
       billingAddress
       shippingAddress
       image='https://svgshare.com/i/CUz.svg'
